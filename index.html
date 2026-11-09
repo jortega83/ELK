@@ -407,6 +407,30 @@ footer address a{text-decoration:none}
 .age-range input{flex:1;accent-color:#fff;height:30px}
 .aging .fine{color:#C4CCD2;margin-top:12px}
 @media (max-width:860px){.color-grid{grid-template-columns:1fr;gap:28px}.ral{grid-template-columns:repeat(auto-fill,minmax(56px,1fr))}.ral button{font-size:16px}.age-grid{gap:7px}.age-grid b{font-size:20px}.age-grid figcaption{font-size:14px;line-height:1.25}.age-box{aspect-ratio:3/4}}
+.xsec{box-shadow:0 18px 40px rgba(22,38,58,.18)}
+.xsec div{border-bottom:1px solid rgba(10,20,32,.28)}
+.xsec div:last-child{border-bottom:0}
+.x-rust{height:calc((1 - var(--p1))*96px);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='140'%3E%3Cfilter id='r' x='0' y='0' width='100%25' height='100%25' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.045' numOctaves='5' seed='9'/%3E%3CfeColorMatrix values='0 0 0 0 .28 0 0 0 0 .13 0 0 0 0 .06 5 0 0 0 -2.2'/%3E%3C/filter%3E%3Crect width='500' height='140' fill='%239A5A2C'/%3E%3Crect width='500' height='140' filter='url(%23r)'/%3E%3C/svg%3E") center/cover;color:#fff}
+.x-rust span{opacity:calc((.72 - var(--p1))*3);text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.x-powder{height:calc(var(--p4)*124px);background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,0) 45%),var(--coat)}
+.x-powder span{opacity:calc((var(--p4) - .45)*3)}
+.x-primer{height:calc(var(--p3)*84px)}
+.x-primer span{opacity:calc((var(--p3) - .45)*3)}
+.x-zinc{height:calc(var(--p2)*92px);background:radial-gradient(circle at 20% 40%,rgba(255,255,255,.3) 0 1px,transparent 2px) 0 0/9px 9px,radial-gradient(circle at 70% 70%,rgba(60,70,80,.2) 0 1px,transparent 2px) 0 0/7px 7px,var(--zinc)}
+.x-zinc span{opacity:calc((var(--p2) - .45)*3)}
+.x-rough{height:calc(var(--p1)*12px);background:repeating-linear-gradient(90deg,#4F5860 0 2px,#8B949B 2px 4px,#626B73 4px 7px)}
+.xsec .x-steel{background:repeating-linear-gradient(180deg,rgba(255,255,255,.05) 0 1px,rgba(0,0,0,.05) 1px 3px),linear-gradient(180deg,#6F7880,#59626A);align-items:flex-end;padding-bottom:18px}
+.steps li{display:grid;grid-template-columns:62px 1fr;column-gap:12px;row-gap:12px;align-content:start;align-items:baseline}
+.steps li p{grid-column:2}
+@media (max-width:860px){
+.x-rust{height:calc((1 - var(--p1))*32px)}
+.x-powder{height:calc(var(--p4)*42px)}
+.x-primer{height:calc(var(--p3)*30px)}
+.x-zinc{height:calc(var(--p2)*32px)}
+.x-rough{height:calc(var(--p1)*7px)}
+.xsec .x-steel{padding-bottom:6px}
+.steps li{grid-template-columns:44px 1fr}
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What can you powder coat?", "acceptedAnswer": {"@type": "Answer", "text": "Most metal parts that can withstand the heat of the curing oven. Send a photo and we will confirm."}}, {"@type": "Question", "name": "Do I need to strip it first?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sandblasting removes rust and old coatings before we coat."}}, {"@type": "Question", "name": "Why add zinc?", "acceptedAnswer": {"@type": "Answer", "text": "Zinc corrodes before the steel does. It is a strong choice for metal that lives outside."}}, {"@type": "Question", "name": "Do you mount and balance tires?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We have a tire changer and wheel balancer at the shop."}}, {"@type": "Question", "name": "Can you coat a railing that is already installed?", "acceptedAnswer": {"@type": "Answer", "text": "It needs to come off so it can be blasted and cured in the oven. Ask us about removal and reinstall."}}, {"@type": "Question", "name": "How do I get a price?", "acceptedAnswer": {"@type": "Answer", "text": "Text photos to 718-885-7982 or use the quote builder on this page."}}]}</script>
 </head>
@@ -585,12 +609,12 @@ footer address a{text-decoration:none}
       <p class="sec-lead">Select the full system or only the stages your project requires. Scroll to see each layer applied.</p>
       <div class="build">
         <div class="xsec" id="xsec" aria-hidden="true">
-          <div class="x-rust">Rust and old coating</div>
-          <div class="x-powder">Powder coat</div>
-          <div class="x-primer">Primer</div>
-          <div class="x-zinc">Zinc</div>
+          <div class="x-rust"><span>Rust and old coating</span></div>
+          <div class="x-powder"><span>Powder coat</span></div>
+          <div class="x-primer"><span>Primer</span></div>
+          <div class="x-zinc"><span>Zinc</span></div>
           <div class="x-rough"></div>
-          <div class="x-steel">Your steel</div>
+          <div class="x-steel"><span>Your steel</span></div>
         </div>
         <ol class="steps" id="steps">
           <li><span class="num">1</span><h3>Sandblasting</h3><p>Removes rust and existing coatings and prepares the surface for strong adhesion.</p></li>
