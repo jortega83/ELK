@@ -368,10 +368,60 @@ footer address a{text-decoration:none}
 .svc-fab{background:repeating-linear-gradient(135deg,#3B4650 0 16px,#2E3842 16px 32px)}
 @media (hover:hover){.svc:hover img,.svc:hover .svc-layers,.svc:hover .svc-wheel,.svc:hover .svc-fab{transform:scale(1.06)}}
 @media (max-width:860px){.svc-grid{grid-template-columns:1fr 1fr;gap:10px}.svc{aspect-ratio:1/1}.svc:last-child{grid-column:1/-1;aspect-ratio:2/1}.svc b{font-size:23px}.svc span{left:10px;right:10px;bottom:9px;font-size:14.5px}}
+#oven{position:fixed;inset:0;z-index:100;display:flex;pointer-events:none;background:radial-gradient(circle,var(--coat),#7A3B00)}
+#oven i{flex:1;background:repeating-linear-gradient(90deg,#AEB6BB 0 2px,#BEC5C9 2px 5px,#A4ACB1 5px 8px);box-shadow:inset 0 0 90px rgba(10,20,32,.5);position:relative;animation-duration:.85s;animation-delay:.55s;animation-timing-function:cubic-bezier(.7,0,.2,1);animation-fill-mode:forwards}
+#oven i:first-child{border-right:2px solid #5C656C;animation-name:ovenL}
+#oven i:last-child{border-left:2px solid #5C656C;animation-name:ovenR}
+#oven i::after{content:"";position:absolute;top:calc(50% + 105px);height:120px;width:16px;border-radius:8px;background:#39424A;box-shadow:0 3px 8px rgba(0,0,0,.45)}
+#oven i:first-child::after{right:26px}
+#oven i:last-child::after{left:26px}
+#oven b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font:800 clamp(90px,16vw,190px)/1 var(--display);color:var(--ink);opacity:.82;animation:ovenB .3s .42s forwards}
+@keyframes ovenL{to{transform:translateX(-101%)}}
+@keyframes ovenR{to{transform:translateX(101%)}}
+@keyframes ovenB{to{opacity:0}}
+.intro .hero h1 .l span{animation-delay:1.05s}
+.intro .hero h1 .l:nth-child(2) span{animation-delay:1.14s}
+.intro .hero h1 .l:nth-child(3) span{animation-delay:1.23s}
+.intro .hero h1 .l:nth-child(4) span{animation-delay:1.32s}
+.all-colors{display:inline-block;margin-top:10px;font-weight:600;text-underline-offset:4px}
+.colors{background:var(--white)}
+.color-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:start;margin-top:34px}
+.color-search{width:100%;padding:13px;border:2px solid var(--ink);font:400 18px var(--body);margin-bottom:14px}
+.ral{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:7px}
+.ral button{aspect-ratio:1;border:2px solid rgba(22,38,58,.28);cursor:pointer;font:800 20px/1 var(--display);padding:0;transition:transform .12s}
+.ral button.on{outline:3px solid var(--ink);outline-offset:1px;transform:scale(1.06)}
+.colors .actions{margin-top:16px}
+.ral-now{font:800 clamp(30px,4vw,44px)/1.05 var(--display);margin-bottom:10px}
+.ral-chip{height:90px;background:var(--coat);border:3px solid var(--ink);margin-bottom:16px;transition:background .2s}
+#matchCv{display:block;width:100%;height:auto;margin-top:16px;border:3px solid var(--ink);cursor:crosshair;touch-action:none}
+#matchCv[hidden]{display:none}
+#matchOut{margin-top:10px;font-weight:600}
+.aging{background:var(--ink);color:var(--white)}
+.age-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 22px}
+.age-grid figure{margin:0}
+.age-box{position:relative;aspect-ratio:4/3;border:3px solid var(--white);overflow:hidden}
+.age-box svg{position:absolute;inset:0;width:100%;height:100%}
+.age-grid figcaption{margin-top:9px}
+.age-grid b{display:block;font:800 31px/1 var(--display)}
+.age-range{display:flex;gap:14px;align-items:center;font-weight:600}
+.age-range input{flex:1;accent-color:#fff;height:30px}
+.aging .fine{color:#C4CCD2;margin-top:12px}
+@media (max-width:860px){.color-grid{grid-template-columns:1fr;gap:28px}.ral{grid-template-columns:repeat(auto-fill,minmax(56px,1fr))}.ral button{font-size:16px}.age-grid{gap:7px}.age-grid b{font-size:20px}.age-grid figcaption{font-size:14px;line-height:1.25}.age-box{aspect-ratio:3/4}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What can you powder coat?", "acceptedAnswer": {"@type": "Answer", "text": "Most metal parts that can withstand the heat of the curing oven. Send a photo and we will confirm."}}, {"@type": "Question", "name": "Do I need to strip it first?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sandblasting removes rust and old coatings before we coat."}}, {"@type": "Question", "name": "Why add zinc?", "acceptedAnswer": {"@type": "Answer", "text": "Zinc corrodes before the steel does. It is a strong choice for metal that lives outside."}}, {"@type": "Question", "name": "Do you mount and balance tires?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We have a tire changer and wheel balancer at the shop."}}, {"@type": "Question", "name": "Can you coat a railing that is already installed?", "acceptedAnswer": {"@type": "Answer", "text": "It needs to come off so it can be blasted and cured in the oven. Ask us about removal and reinstall."}}, {"@type": "Question", "name": "How do I get a price?", "acceptedAnswer": {"@type": "Answer", "text": "Text photos to 718-885-7982 or use the quote builder on this page."}}]}</script>
 </head>
 <body>
+<script>
+(function(){
+  var seen=false;
+  try{seen=sessionStorage.getItem("elk-oven")==="1";sessionStorage.setItem("elk-oven","1")}catch(e){}
+  if(seen||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  document.documentElement.classList.add("intro");
+  var o=document.createElement("div");o.id="oven";o.setAttribute("aria-hidden","true");
+  o.innerHTML="<i></i><i></i><b>ELK</b>";document.body.appendChild(o);
+  setTimeout(function(){o.remove()},1600);
+})();
+</script>
 
 <svg class="defs" aria-hidden="true">
   <filter id="rustF" x="0" y="0" width="100%" height="100%">
@@ -433,6 +483,7 @@ footer address a{text-decoration:none}
         <fieldset class="coupons" id="coupons"><legend>Powder color</legend></fieldset>
         <p id="colorName" aria-live="polite"></p>
         <p class="fine">Screen colors are a guide. See a real sample before you choose.</p>
+        <a class="all-colors" href="#colors">View the full color library</a>
       </div>
     </div>
   </div>
@@ -484,6 +535,28 @@ footer address a{text-decoration:none}
     </div>
   </section>
 
+  <section class="colors" id="colors">
+    <div class="wrap">
+      <h2 class="sec-head">Color library.</h2>
+      <p class="sec-lead">Browse common RAL colors or match a color from your own photo. Your selection carries across the site.</p>
+      <div class="color-grid">
+        <div>
+          <input class="color-search" id="ralSearch" aria-label="Search colors" placeholder="Search by name or RAL number">
+          <div class="ral" id="ralGrid"></div>
+          <p id="ralEmpty" class="fine" hidden style="margin-top:12px">No colors found. Try another name or number.</p>
+        </div>
+        <div>
+          <div class="ral-chip" aria-hidden="true"></div>
+          <p class="ral-now" id="ralNow" aria-live="polite"></p>
+          <p class="fine">On-screen colors are approximate. Confirm stock and appearance with a physical sample.</p>
+          <div class="actions"><label class="btn btn-coat file-btn">Match from a photo<input id="matchPhoto" type="file" accept="image/*" aria-label="Choose a photo to match a color"></label></div>
+          <canvas id="matchCv" hidden aria-label="Photo for matching a color"></canvas>
+          <p id="matchOut" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="scratch" id="scratch">
     <div class="wrap">
       <h2 class="sec-head">Durability you can see.</h2>
@@ -493,6 +566,16 @@ footer address a{text-decoration:none}
         <figure><canvas id="scrPowder" width="500" height="400" aria-label="Powder coat scratch demonstration"></canvas><figcaption>Powder coat</figcaption></figure>
       </div>
       <p class="fine">An illustration, not a lab test. Powder coat resists scratches but is not scratch-proof.</p>
+    </div>
+  </section>
+
+  <section class="aging" id="aging">
+    <div class="wrap">
+      <h2 class="sec-head">Protection that holds over time.</h2>
+      <p class="sec-lead">Move the slider to compare how three surfaces can change after long-term outdoor exposure.</p>
+      <div class="age-grid" id="ageGrid"></div>
+      <label class="age-range"><span>New</span><input id="ageSlider" type="range" min="0" max="100" value="0" aria-label="Time outdoors"><span>Long-term exposure</span></label>
+      <p class="fine">An illustration, not a test result. Actual performance depends on the environment, surface preparation and maintenance.</p>
     </div>
   </section>
 
@@ -795,6 +878,26 @@ footer address a{text-decoration:none}
   };
   /* ========================================================================= */
   var ES={
+"View the full color library":"Ver la biblioteca completa de colores",
+"Color library.":"Biblioteca de colores.",
+"Browse common RAL colors or match a color from your own photo. Your selection carries across the site.":"Explore colores RAL comunes o busque un color a partir de su propia foto. Su selección se aplica en todo el sitio.",
+"Search by name or RAL number":"Buscar por nombre o número RAL",
+"No colors found. Try another name or number.":"No se encontraron colores. Pruebe con otro nombre o número.",
+"On-screen colors are approximate. Confirm stock and appearance with a physical sample.":"Los colores en pantalla son aproximados. Confirme disponibilidad y apariencia con una muestra física.",
+"Match from a photo":"Buscar desde una foto",
+"Select any point on the photo to find the closest color.":"Seleccione un punto de la foto para encontrar el color más cercano.",
+"Closest match: ":"Color más cercano: ",
+"Protection that holds over time.":"Protección que perdura.",
+"Move the slider to compare how three surfaces can change after long-term outdoor exposure.":"Mueva el control para comparar cómo pueden cambiar tres superficies tras una exposición prolongada al exterior.",
+"New":"Nuevo",
+"Long-term exposure":"Exposición prolongada",
+"An illustration, not a test result. Actual performance depends on the environment, surface preparation and maintenance.":"Es una ilustración, no un resultado de prueba. El rendimiento real depende del entorno, la preparación de la superficie y el mantenimiento.",
+"Bare steel":"Acero sin recubrir",
+"Unprotected metal":"Metal sin protección",
+"Standard paint":"Pintura estándar",
+"A single painted coat":"Una sola capa de pintura",
+"Zinc and powder coat":"Zinc y recubrimiento en polvo",
+"ELK full protection system":"Sistema de protección completa de ELK",
 "Blasted.":"Limpio.","Coated.":"Recubierto.","Built":"Hecho","to last.":"para durar.",
 "Services":"Servicios",
 "Our services.":"Nuestros servicios.",
@@ -1005,7 +1108,7 @@ footer address a{text-decoration:none}
   }
   slider.addEventListener("input",function(){sweep=null;setX(+slider.value);emit(+slider.value,18)});
   setX(0);
-  setTimeout(function(){runSweep(+slider.value,1700)},calm?0:350);
+  setTimeout(function(){runSweep(+slider.value,1700)},calm?0:(root.classList.contains("intro")?1250:350));
 
   /* Powder colors */
   var colors=[
@@ -1591,6 +1694,96 @@ footer address a{text-decoration:none}
       renderJob();
     });
   });
+
+  /* Color library and photo match */
+  (function(){
+    var L=[["Signal Yellow",1003,"F9A800"],["Oyster White",1013,"E3D9C6"],["Light Ivory",1015,"E6D2B5"],["Zinc Yellow",1018,"FACA30"],["Traffic Yellow",1023,"F7B500"],["Pure Orange",2004,"E75B12"],["Traffic Orange",2009,"DE5307"],["Flame Red",3000,"A72920"],["Signal Red",3001,"A02128"],["Ruby Red",3003,"8D1D2C"],["Wine Red",3005,"5E2028"],["Traffic Red",3020,"C1121C"],["Blue Lilac",4005,"76689A"],["Ultramarine Blue",5002,"00387B"],["Signal Blue",5005,"005387"],["Gentian Blue",5010,"004F7C"],["Sky Blue",5015,"007CB0"],["Traffic Blue",5017,"005B8C"],["Leaf Green",6002,"276235"],["Moss Green",6005,"0F4336"],["Fir Green",6009,"27352A"],["Yellow Green",6018,"57A639"],["Mint Green",6029,"006F3D"],["Signal Grey",7004,"9EA0A1"],["Anthracite Grey",7016,"373F43"],["Light Grey",7035,"CBD0CC"],["Dust Grey",7037,"7A7B7A"],["Agate Grey",7038,"B4B8B0"],["Window Grey",7040,"9CA3A7"],["Traffic Grey A",7042,"8F9695"],["Chocolate Brown",8017,"442F29"],["Grey Brown",8019,"3D3635"],["Grey White",9002,"E7EBDA"],["Signal White",9003,"F4F8F4"],["Jet Black",9005,"0E0E10"],["White Aluminium",9006,"A1A1A0"],["Grey Aluminium",9007,"878581"],["Pure White",9010,"F7F9EF"],["Graphite Black",9011,"1C1C1E"],["Traffic White",9016,"F1F0EA"]];
+    function rgb(h){return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]}
+    function lum(h){var c=rgb(h);return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+    var grid=$("ralGrid"),btns=[];
+    function choose(x,i){
+      document.querySelectorAll('input[name^="powder"]').forEach(function(r){r.checked=false});
+      btns.forEach(function(b){b.classList.remove("on")});btns[i].classList.add("on");
+      apply([x[0],"RAL "+x[1],"#"+x[2],lum(x[2])>140?"#16263A":"#FFFFFF"],true);
+    }
+    L.forEach(function(x,i){
+      var b=document.createElement("button");b.type="button";b.textContent=x[1];
+      b.style.background="#"+x[2];b.style.color=lum(x[2])>140?"#16263A":"#FFFFFF";b.title=x[0];
+      b.setAttribute("aria-label",x[0]+" RAL "+x[1]);
+      b.addEventListener("click",function(){choose(x,i)});
+      grid.appendChild(b);btns.push(b);
+    });
+    colorHooks.push(function(){$("ralNow").textContent=colorLabel});
+    $("ralSearch").addEventListener("input",function(){
+      var q=this.value.trim().toLowerCase(),n=0;
+      L.forEach(function(x,i){var ok=!q||x[0].toLowerCase().indexOf(q)>=0||String(x[1]).indexOf(q)>=0;btns[i].style.display=ok?"":"none";if(ok)n++});
+      $("ralEmpty").hidden=n>0;
+    });
+    var mc=$("matchCv"),mx=mc.getContext("2d",{willReadFrequently:true});
+    $("matchPhoto").addEventListener("change",function(){
+      var f=this.files&&this.files[0];if(!f)return;
+      var u=URL.createObjectURL(f),im=new Image();
+      im.onload=function(){
+        var k=Math.min(1,900/Math.max(im.naturalWidth,im.naturalHeight));
+        mc.width=Math.round(im.naturalWidth*k);mc.height=Math.round(im.naturalHeight*k);
+        mx.drawImage(im,0,0,mc.width,mc.height);mc.hidden=false;
+        $("matchOut").textContent=T("Select any point on the photo to find the closest color.");
+        URL.revokeObjectURL(u);
+      };
+      im.src=u;
+    });
+    mc.addEventListener("pointerdown",function(e){
+      var r=mc.getBoundingClientRect(),x=Math.round((e.clientX-r.left)*mc.width/r.width),y=Math.round((e.clientY-r.top)*mc.height/r.height);
+      var d=mx.getImageData(Math.max(0,x-4),Math.max(0,y-4),9,9).data,c=[0,0,0],n=d.length/4;
+      for(var i=0;i<d.length;i+=4){c[0]+=d[i];c[1]+=d[i+1];c[2]+=d[i+2]}
+      c=c.map(function(v){return v/n});
+      var best=0,bd=1e12;
+      L.forEach(function(q,j){
+        var t=rgb(q[2]),rm=(c[0]+t[0])/2,dr=c[0]-t[0],dg=c[1]-t[1],db=c[2]-t[2];
+        var dist=(2+rm/256)*dr*dr+4*dg*dg+(2+(255-rm)/256)*db*db;
+        if(dist<bd){bd=dist;best=j}
+      });
+      choose(L[best],best);
+      $("matchOut").textContent=T("Closest match: ")+L[best][0]+" (RAL "+L[best][1]+")";
+      e.preventDefault();
+    });
+  })();
+
+  /* Finish aging comparison */
+  (function(){
+    var P=[["Bare steel","Unprotected metal","#7E878E",1,0],["Standard paint","A single painted coat","#4A6275",.62,.25],["Zinc and powder coat","ELK full protection system","var(--coat)",.03,.75]];
+    var grid=$("ageGrid"),mats=[];
+    P.forEach(function(p,i){
+      var f=document.createElement("figure");
+      f.innerHTML='<div class="age-box"><svg viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="age'+i+'" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="5" seed="'+(7+i*5)+'"/><feColorMatrix values="0 0 0 0 .36  0 0 0 0 .17  0 0 0 0 .08  8 0 0 0 -7"/></filter></defs><rect width="400" height="300" style="fill:'+p[2]+'"/><rect width="400" height="300" filter="url(#age'+i+')"/></svg></div><figcaption><b></b><span></span></figcaption>';
+      f.querySelector("b").textContent=p[0];f.querySelector("span").textContent=p[1];
+      grid.appendChild(f);
+      mats.push(f.querySelector("feColorMatrix"));
+    });
+    function set(v){
+      var t=v/100;
+      P.forEach(function(p,i){
+        var a=Math.max(0,(t-p[4]*.45)/(1-p[4]*.45))*p[3];
+        var th=.84-a*.62;
+        mats[i].setAttribute("values","0 0 0 0 .36  0 0 0 0 .17  0 0 0 0 .08  8 0 0 0 "+(-8*th).toFixed(3));
+      });
+    }
+    set(0);
+    var sl=$("ageSlider"),run=null;
+    sl.addEventListener("input",function(){run=null;set(+sl.value)});
+    if("IntersectionObserver" in window&&!calm){
+      var io=new IntersectionObserver(function(es){
+        if(!es[0].isIntersecting)return;io.disconnect();
+        var st=performance.now(),id={};run=id;
+        (function step(n){
+          if(run!==id)return;
+          var q=clamp((n-st)/2600),v=q*72;sl.value=v;set(v);
+          if(q<1)requestAnimationFrame(step);
+        })(st);
+      },{threshold:.45});
+      io.observe(grid);
+    }
+  })();
 
   /* Language switch */
   function applyLang(){
